@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+  p(class="welcome") Welcome to #{title}
+  ul
+    each val in messages
+      li
+        p(class="user")=val.user
+        p(class="text")=val.text
+        p(class="added")=val.added 
+  a(href="/new") Add a message
+        
